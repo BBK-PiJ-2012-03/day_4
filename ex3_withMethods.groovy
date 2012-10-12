@@ -12,18 +12,16 @@ class Mortgage {
 	}
 
 
-        double findMoneyPerYear ()
+        double findMoneyPerYear (double total)
 	{
-	double total = ( c*(1+(r/100)) )
+	
 	double moneyPerYear = (total/years)
 	return moneyPerYear
 	}
 
-	double findInterestPayTime ()
+	double findInterestPayTime (double total, double moneyPerYear)
 	{
-	double total = ( c*(1+(r/100)) )
 	double interestTotal = (total - c)
-	double moneyPerYear = (total/years)
 	double interestPayTime = ( interestTotal / moneyPerYear)
 	return interestPayTime
 	}
@@ -51,5 +49,5 @@ m.years = Integer.parseInt(s2)
 
 
 println (m.findTotal())
-println (m.findMoneyPerYear())
-println (m.findInterestPayTime ())
+println (m.findMoneyPerYear( m.findTotal() ))
+println (m.findInterestPayTime ( m.findTotal() , m.findMoneyPerYear(( m.findTotal() )) ))
