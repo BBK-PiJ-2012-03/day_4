@@ -1,8 +1,9 @@
-class ConvertTo  {
+class ConvertTo  
+{
 
 	
 int binary2decimal(String s2)
- {
+  {
 	int tool = 0
 
 	for (int i = 0 ; i < s2.length() ; i++)
@@ -15,10 +16,37 @@ int binary2decimal(String s2)
      	}
 
  	return (tool)
- }
+  }
+
+String decimal2binary (int decimal)
+  { 
+String reversed = ""
+String stresult = ""
+String zero = "0"
+String one = "1"
+
+while (decimal>0) {
+	int remainder = decimal%2
+	decimal = decimal/2
+	
+	if (remainder == 1) {
+			stresult = stresult + one
+			    }
+	else if (remainder == 0) {
+		stresult = stresult + zero
+	     			 }
 
 
+		  }
+	for(int i = stresult.length() - 1 ; i >  -1 ; i--)
+			{
+	char last = stresult.charAt(i)
+	
+	reversed = reversed + last
 
+			}
+	return (reversed)
+  }
 
 
 }
@@ -52,8 +80,13 @@ while (!finished)
 	break;
 
 	case 2:
-	println ("oxi etoimo akoma")
-	 //kalw tin methodo gia to 2
+	println ("Give me your decimal number")
+	String s3 = System.console().readLine()
+	int decimal  = Integer.parseInt(s3)
+	println (myConvert.decimal2binary(decimal))
+	
+
+
 	break;
 	
 	default:
